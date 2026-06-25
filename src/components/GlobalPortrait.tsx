@@ -89,15 +89,16 @@ export default function GlobalPortrait() {
   };
 
   // Combine scroll map values with contact modal coordinates using native transforms
-  const xTransform = useTransform([xMap, contactOpenVal], ([latestX, latestContactOpen]) => {
+  const xTransform = useTransform([xMap, contactOpenVal] as [MotionValue<any>, MotionValue<any>], ([latestX, latestContactOpen]) => {
     if (isMobile && !isContactOpen) return 0; // Lock centered horizontally in header
     const closedPx = parseToPx(latestX);
     const openPx = targetX;
     const t = latestContactOpen as number;
     return closedPx * (1 - t) + openPx * t;
   });
+  
 
-  const yTransform = useTransform([yMap, contactOpenVal], ([latestY, latestContactOpen]) => {
+  const yTransform = useTransform([yMap, contactOpenVal] as [MotionValue<any>, MotionValue<any>], ([latestY, latestContactOpen]) => {
     if (isMobile && !isContactOpen) return 0; // Lock centered vertically relative to header top coordinate
     const closedPx = parseToPx(latestY);
     const openPx = targetY;
@@ -105,7 +106,7 @@ export default function GlobalPortrait() {
     return closedPx * (1 - t) + openPx * t;
   });
 
-  const scaleTransform = useTransform([scaleMap, contactOpenVal], ([latestScale, latestContactOpen]) => {
+  const scaleTransform = useTransform([scaleMap, contactOpenVal] as [MotionValue<any>, MotionValue<any>], ([latestScale, latestContactOpen]) => {
     if (isMobile && !isContactOpen) return 0.85; // Static scale for header lock (larger for mobile layout width)
     const closedScale = latestScale as number;
     const openScale = 0.22;
@@ -113,7 +114,7 @@ export default function GlobalPortrait() {
     return closedScale * (1 - t) + openScale * t;
   });
 
-  const rotateTransform = useTransform([rotateMap, contactOpenVal], ([latestRotate, latestContactOpen]) => {
+  const rotateTransform = useTransform([rotateMap, contactOpenVal] as [MotionValue<any>, MotionValue<any>], ([latestRotate, latestContactOpen]) => {
     if (isMobile && !isContactOpen) return 0; // Lock rotation in header
     const closedRotate = latestRotate as number;
     const openRotate = 0;
