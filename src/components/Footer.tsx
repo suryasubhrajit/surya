@@ -163,7 +163,7 @@ export default function Footer() {
         {/* Bottom Row: Copyright and Social links */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
           <div className="text-[#666] text-center sm:text-left">
-            © {new Date().getFullYear()} Surya Subhrajit. All rights reserved.
+            © {new Date().getFullYear()} Surya 
           </div>
 
           {/* Social Links Section */}
