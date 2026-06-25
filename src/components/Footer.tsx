@@ -162,8 +162,18 @@ export default function Footer() {
 
         {/* Bottom Row: Copyright and Social links */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-          <div className="text-[#666] text-center sm:text-left">
-            © {new Date().getFullYear()} Surya 
+          <div className="text-[#666] text-center sm:text-left flex items-center justify-center sm:justify-start gap-1">
+            © {new Date().getFullYear()} 
+            <div className="relative group cursor-help inline-flex items-center">
+              <span className="text-[#888] hover:text-[#00ff41] transition-colors border-b border-dashed border-[#555] group-hover:border-[#00ff41]">Surya</span>
+              
+              {/* Custom Tooltip */}
+              <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-[#111] text-[11px] font-mono px-3 py-2 rounded border border-[#333] whitespace-nowrap shadow-[0_0_15px_rgba(0,255,65,0.15)] z-50 flex flex-col items-center">
+                <span className="text-[#00ff41]">Domain says Subhrajit?</span>
+                <span className="text-[#888]">- Yeah, my full name is Surya Subhrajit.</span>
+                <div className="absolute -bottom-[5px] left-1/2 -translate-x-1/2 w-2 h-2 bg-[#111] border-b border-r border-[#333] rotate-45"></div>
+              </div>
+            </div>
           </div>
 
           {/* Social Links Section */}
