@@ -91,7 +91,7 @@ export default function GlobalPortrait() {
   // Combine scroll map values with contact modal coordinates using native transforms
   const xTransform = useTransform([xMap, contactOpenVal] as [MotionValue<any>, MotionValue<any>], ([latestX, latestContactOpen]) => {
     if (isMobile && !isContactOpen) return 0; // Lock centered horizontally in header
-    const closedPx = parseToPx(latestX);
+    const closedPx = parseToPx(latestX as any);
     const openPx = targetX;
     const t = latestContactOpen as number;
     return closedPx * (1 - t) + openPx * t;
@@ -100,7 +100,7 @@ export default function GlobalPortrait() {
 
   const yTransform = useTransform([yMap, contactOpenVal] as [MotionValue<any>, MotionValue<any>], ([latestY, latestContactOpen]) => {
     if (isMobile && !isContactOpen) return 0; // Lock centered vertically relative to header top coordinate
-    const closedPx = parseToPx(latestY);
+    const closedPx = parseToPx(latestY as any);
     const openPx = targetY;
     const t = latestContactOpen as number;
     return closedPx * (1 - t) + openPx * t;
@@ -108,7 +108,7 @@ export default function GlobalPortrait() {
 
   const scaleTransform = useTransform([scaleMap, contactOpenVal] as [MotionValue<any>, MotionValue<any>], ([latestScale, latestContactOpen]) => {
     if (isMobile && !isContactOpen) return 0.85; // Static scale for header lock (larger for mobile layout width)
-    const closedScale = latestScale as number;
+    const closedScale = latestScale as any;
     const openScale = 0.22;
     const t = latestContactOpen as number;
     return closedScale * (1 - t) + openScale * t;
@@ -116,7 +116,7 @@ export default function GlobalPortrait() {
 
   const rotateTransform = useTransform([rotateMap, contactOpenVal] as [MotionValue<any>, MotionValue<any>], ([latestRotate, latestContactOpen]) => {
     if (isMobile && !isContactOpen) return 0; // Lock rotation in header
-    const closedRotate = latestRotate as number;
+    const closedRotate = latestRotate as any;
     const openRotate = 0;
     const t = latestContactOpen as number;
     return closedRotate * (1 - t) + openRotate * t;
