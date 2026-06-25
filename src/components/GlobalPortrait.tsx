@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform, useSpring, useMotionValue, animate } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useMotionValue, animate, MotionValue } from 'framer-motion';
 import {useState, useEffect} from 'react';
 export default function GlobalPortrait() {
   const { scrollYProgress } = useScroll();
