@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import GlobalPortrait from "@/components/GlobalPortrait";
+import BrandLogos from "@/components/BrandLogos";
 import Footer from "@/components/Footer";
 
 export default function Page() {
@@ -21,6 +22,9 @@ export default function Page() {
       <SkillsSection />
       <div id="projects"></div>
       <ProjectsSection />
+
+      {/* Brand Logos Strip */}
+      <BrandLogos />
 
       {/* Premium Dark-Themed Footer */}
       <Footer />
