@@ -7,7 +7,10 @@ const kanit = Kanit({
 });
 
 export const metadata = {
-  title: "Aryan — 3D Creator",
+  title: "Surya Subhrajit Portfolio",
+  icons: {
+    icon: "/images/potrait_face.png",
+  },
 };
 
 export default function RootLayout({
