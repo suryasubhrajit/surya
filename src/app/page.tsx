@@ -1,65 +1,51 @@
-import Image from "next/image";
+import HeroSection from "@/components/HeroSection";
+import MarqueeSection from "@/components/MarqueeSection";
+import AboutSection from "@/components/AboutSection";
+import ServicesSection from "@/components/ServicesSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import GlobalPortrait from "@/components/GlobalPortrait";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main style={{ overflowX: "clip" }}>
+      <GlobalPortrait />
+      <HeroSection />
+      <MarqueeSection />
+      <AboutSection />
+      <ServicesSection />
+      <ProjectsSection />
+      
+      {/* Premium Dark-Themed Footer */}
+      <footer className="bg-[#060608] text-[#D7E2EA] px-6 sm:px-10 py-16 sm:py-24 border-t border-slate-900 relative z-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+          {/* Left section: Name, Role, and space for portrait placeholder */}
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-24">
+              <span className="text-2xl sm:text-3xl font-black uppercase tracking-wider">Surya</span>
+            </div>
+            <span className="text-xs sm:text-sm text-slate-500 uppercase tracking-widest font-mono">// 3D Creator & Developer</span>
+          </div>
+
+          {/* Right section: Links and Socials */}
+          <div className="flex flex-wrap gap-x-16 gap-y-8 font-mono text-xs sm:text-sm">
+            <div className="flex flex-col gap-3">
+              <span className="text-slate-500 uppercase tracking-widest text-[10px]">// CONTACT</span>
+              <a href="mailto:connectsuryasubhrajit@gmail.com" className="hover:text-emerald-400 transition-colors">connectsuryasubhrajit@gmail.com</a>
+              <span className="text-slate-400">+1 (555) 019-2831</span>
+            </div>
+            <div className="flex flex-col gap-3">
+              <span className="text-slate-500 uppercase tracking-widest text-[10px]">// SOCIALS</span>
+              <a href="#" className="hover:text-emerald-400 transition-colors">Github</a>
+              <a href="#" className="hover:text-emerald-400 transition-colors">LinkedIn</a>
+              <a href="#" className="hover:text-emerald-400 transition-colors">Twitter</a>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="max-w-6xl mx-auto border-t border-slate-900/60 mt-12 pt-8 flex justify-between items-center text-[10px] text-slate-600 font-mono">
+          <span>© 2026 SURYA. ALL RIGHTS RESERVED.</span>
+          <span>SECURE_CONNECTION: ACTIVE</span>
         </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
